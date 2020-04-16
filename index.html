@@ -2,6 +2,20 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
+    <!-- firebase -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+    
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+          https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-analytics.js"></script>
+    <!-- end of firebase head -->
+
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@700&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@700&display=swap" rel="stylesheet">
     <!-- BootStraps cSS -->
     <link
       rel="stylesheet"
@@ -44,25 +58,37 @@
     <title>Food For All - FFA</title>
   </head>
   <body>
-    <!-- NAV -->
-    <!-- Image and text -->
-    <nav class="navbar navbar-dark navbar-custom">
-      <a class="navbar-brand" href="#">
-        <img
-          src="assets/brand/bootstrap-solid.svg"
-          width="30"
-          height="30"
-          class="d-inline-block align-top"
-          alt=""
-        />
-        FOOD FOR ALL
-      </a>
-    </nav>
+    <header class="container-fluid">
 
-    <div style="width: 75vw; height: 90vh;" id="mapContainer"></div>
-    <script src="js/map.js"></script>
+      <!-- NAV -->
+      <!-- Image and text -->
+      <nav class="navbar navbar-light navbar-custom flex-row py-4 shadow p-3 mb-5 rounded " >
+        <div class="container-fluid">
+          <div class="header-inline">
+            <a class="navbar-brand header-logo" href="#">
+              <img
+              src="assets/brand/mainicon.png"
+              width="60vw"
+              height="60vh"
+              class="d-inline-block align-top"
+              alt=""
+              class=""
+              />
+              <div class="display-4 text-black ml-2"
+              style="display: inline;"
+              ">
+              BAY AREA FREE FOOD LOOKUP
+             </div>
+             
+           </a>
+         </div>
 
-    <script src="js/app.js"></script>
+        </div>
+      </nav>
+    </header>
+      
+    <div class="container-fluid mt-5" style="width: 80vw; height: 80vh;" id="mapContainer"></div>
+    
     <!-- BootStrAP jQUERY -->
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -80,5 +106,31 @@
       crossorigin="anonymous"
     ></script>
     <!-- End of Bootstrap Script -->
+
+    <!-- firebase -->
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDM3JJvC5OFcVr4D5ixLTG_Y06K2yC9FbM",
+        authDomain: "mapout.firebaseapp.com",
+        databaseURL: "https://mapout.firebaseio.com",
+        projectId: "mapout",
+        storageBucket: "mapout.appspot.com",
+        messagingSenderId: "580676156954",
+        appId: "1:580676156954:web:f78ae2f042728a90231ba3",
+        measurementId: "G-6YED3JEKLD"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+      const db = firebase.firestore();
+      // db.settings({});
+    </script>
+    <!-- End of firebase -->
+
+    <script src="js/app.js"></script>
+
+    <script src="js/map.js"></script>
+    
   </body>
 </html>

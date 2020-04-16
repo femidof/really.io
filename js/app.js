@@ -1,0 +1,3 @@
+db.collection("resources").forEach(() => {
+
+})
